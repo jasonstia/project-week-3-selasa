@@ -1,0 +1,62 @@
+var input = ["0001", "Roman Alamsyah ", "Bandar Lampung", "21/05/1989", "Membaca"];
+
+function dataHandling2 (input) {
+    var array2 = []
+    var nama = input[1]+' '+ 'Elsharawy'
+    var gender = 'Pria'
+    var sekolah = 'SMA International Metro'
+    var provinsi = 'provinsi'+' '+ input[2]
+
+    array2 = [input[0], nama, provinsi, input[3], gender, sekolah]
+    console.log(array2)
+
+    
+    
+    var tanggal = input[3].split('/')
+    var bulan = tanggal[1]
+    var bulan_string = ''
+    switch (bulan) {
+        case '01': bulan_string = 'january';
+        break;
+        case '02': bulan_string = 'februari';
+        break;
+        case '03': bulan_string = 'maret';
+        break;
+        case '04': bulan_string = 'april';
+        break;
+        case '05': bulan_string = 'mei';
+        break;
+        case '06': bulan_string = 'juni';
+        break;
+        case '07': bulan_string = 'juli';
+        break;
+        case '08': bulan_string = 'agustus';
+        break;
+        case '09': bulan_string = 'september';
+        break;
+        case '10': bulan_string = 'oktober';
+        break;
+        case '11': bulan_string = 'november';
+        break;
+        default: bulan_string = 'desember';
+        break;
+    }
+    console.log(bulan_string)
+    console.log(tanggal.sort(function(a, b) {
+        return b-a
+    }))
+
+    console.log(tanggal[1]+'-'+tanggal[2]+'-'+tanggal[0])
+    console.log(input[1])
+}
+dataHandling2(input);
+
+/**
+ * keluaran yang diharapkan (pada console)
+ *
+ * ["0001", "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung", "21/05/1989", "Pria", "SMA Internasional Metro"]
+ * Mei
+ * ["1989", "21", "05"]
+ * 21-05-1989
+ * Roman Alamsyah
+ */
